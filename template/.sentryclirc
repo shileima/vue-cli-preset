@@ -1,0 +1,9 @@
+[auth]
+token=f99aebfed9734d8fa5cc834f80c53a6a6e8a268471e749acbea5c25941115f35
+
+[defaults]
+org=jiazheng
+project=<%_ if (options.inputSentryProject === 'yes') { _%> <%= rootOptions['projectName'] %> 
+        <%_ } else { _%> <%= options.inputSentryProject %> 
+        <%_ } _%>
+url=https://jz-homer.daojia-inc.com

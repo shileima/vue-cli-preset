@@ -1,0 +1,50 @@
+{
+  "useConfigFiles": true,
+  "cssPreprocessor": "sass",
+  "plugins": {
+    "@vue/cli-plugin-babel": {
+      "version": "^3.0.0"
+    },
+    "@vue/cli-plugin-eslint": {
+      "version": "^3.0.0",
+      "config": "standard",
+      "lintOn": ["save", "commit"]
+    }
+  },
+  "configs": {
+    "vue": {
+      "baseUrl": "/",
+      "outputDir": "dist",
+      "assetsDir": "static",
+      "filenameHashing": true,
+      "lintOnSave": true,
+      "runtimeCompiler": false,
+      "transpileDependencies": [],
+      "productionSourceMap": false,
+      "pages": {
+        "index": {
+          "entry": "src/main.js",
+          "template": "public/index.html",
+          "filename": "index.html",
+          "title": "首页",
+          "chunks": ["chunk-vendors", "chunk-common", "index"]
+        }
+      },
+      "devServer": {
+        "open": true,
+        "host": "127.0.0.1",
+        "https": false,
+        "hotOnly": false,
+        "proxy": null
+      },
+      "pwa": {},
+      "pluginOptions": {}
+    },
+    "postcss": {},
+    "eslintConfig": {
+    }
+  },
+  "router": false,
+  "vuex": false,
+  "routerHistoryMode": false
+}

@@ -1,0 +1,4 @@
+DJ_DOMAIN=jz-cdn-betaa.djtest.cn
+DJ_ENV_NAME=testa
+DJ_ENV_OUTPUT_PATH=dist
+DJ_ASSETS_PATH = '/xxx'

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="dns-prefetch" href="//static.daojia.com">
+    <title></title>
+    <!-- 引入埋点js -->
+    <script>
+      // 埋点初始化参数
+      var bi_params = { auto_mode: false }      
+    </script>
+    <script src="//static.daojia.com/bi/buried_point/js/tracker.js"></script>
+    <!-- homer -->
+    <script src="//static-fe.daojia.com/jz/assets/clean/homer/homerVue.js?v=1.0.1>"></script>
+    <!-- 调试 -->
+    <%% if (process.env.VUE_APP_MODE !== 'production' && process.env.VUE_APP_MODE !== 'sandbox') { %>
+      <script src="//static.djtest.cn/changsha/common/vconsole/lastest/dist/vconsole.min.js"></script><script>window.vConsole = new VConsole();</script>
+    <%% } %>
+  </head>
+  <body>
+    <script>
+      (function flexible(window,document){var docEl=document.documentElement;function setRemUnit(){var clientWidth=docEl.clientWidth;docEl.style.fontSize=(clientWidth/750)*100+"px";var scaledFontSize=parseInt(window.getComputedStyle(document.querySelector("html"),null).getPropertyValue("font-size"));if(parseInt(docEl.style.fontSize)!==scaledFontSize){var val=(clientWidth/750)*100;docEl.style.fontSize=val*val/scaledFontSize+"px"}}setRemUnit();window.addEventListener("resize",setRemUnit);window.addEventListener("pageshow",function(e){if(e.persisted){setRemUnit()}})}(window,document));
+    </script>
+    <% if (options.sendmiddle) { %>
+      <!-- 开发模式mock pageData, 中间层项目请在env中配置VUE_APP_PAGE_DATA -->
+      <%% if (process.env.VUE_APP_MODE === 'development') { %>
+        <script src="./pageDataMock.js"></script>
+      <%% } else if (process.env.VUE_APP_PAGE_DATA) { %>
+        <script>
+          window.pageData = <%%= process.env.VUE_APP_PAGE_DATA %>
+        </script>
+      <%% } %>
+    <% } %>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
