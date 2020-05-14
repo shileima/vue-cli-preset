@@ -19,8 +19,9 @@ module.exports = [
     message: `请选择依赖的组件类库`,
     choices: [
       { name: 'C端', value: 'user' },
-      { name: 'B端', value: 'worker'},
-      { name: '员工端', value: 'agent'}
+      { name: 'B端', value: 'worker' },
+      { name: '员工端', value: 'agent' },
+      { name: '中后台', value: 'agent' }
     ]
   },
   {
